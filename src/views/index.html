@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>wsclient-prototype</title>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/users.css" />
+        <!-- <meta http-equiv="Content-Security-Policy" content="
+            default-src * data: mediastream: blob: filesystem: about: ws: wss: 'unsafe-eval' 'wasm-unsafe-eval' 'unsafe-inline'; 
+            script-src * data: blob: 'unsafe-inline' 'unsafe-eval'; 
+            connect-src * data: blob: 'unsafe-inline'; 
+            img-src * data: blob: 'unsafe-inline'; 
+            frame-src * data: blob: ; 
+            style-src * data: blob: 'unsafe-inline';
+            font-src * data: blob: 'unsafe-inline';
+            frame-ancestors * data: blob: 'unsafe-inline';
+        "> -->
+    </head>
+    <body>
+        <main>
+            <h2>wsclient-prototype</h2>
+            <form>
+                Login type: 
+                <select id="loginType">
+                    <option id="customerOption">Customer</option>
+                    <option id="scooterOption">Scooter</option>
+                    <option id="adminOption" selected>Admin</option>
+                </select>
+                <br><br>
+                Email/id/username: <input type="text" id="loginName" value="chefen">
+                <br><br>
+                Password: <input type="password" id="password" value="chefen">
+                <br><br>
+                <input type="submit" id="loginBtn" value="Login">
+            </form>
+            <br>
+            <form>
+                Host: <input type="text" id="host" value="ws://localhost:8081">
+                Protocol: <input type="text" id="token">
+                <br><br>
+                <input type="submit" id="connectBtn" value="Connect">
+                <button id="disconnectBtn" disabled>Disconnect</button>
+            </form>
+            <br>
+            <form>
+                Input:
+                <textarea id="input">
+{
+    "message": "subscribe",
+    "subscriptions": [
+        "trip",
+        "scooter",
+        "customer"
+    ]
+}
+                </textarea>
+                <input type="submit" id="sendBtn" value="Send" disabled>
+            </form>
+            <br>
+            Output:
+            <textarea id="output" disabled>Start of output console...</textarea>
+        </main>
+    </body>
+    <script src="scripts/http.js"></script>
+    <script src="scripts/index.js"></script>
+</html>

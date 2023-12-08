@@ -6,7 +6,7 @@ const disconnectBtn = document.getElementById("disconnectBtn");
 
 loginBtn.addEventListener("click", (event) => {
     event.preventDefault();
-    const loginName = document.getElementById("loginName").value;
+    let loginName = document.getElementById("loginName").value;
     const password = document.getElementById("password").value;
     const selected = document.getElementById("loginType").selectedOptions[0];
     let endpoint;
@@ -21,6 +21,7 @@ loginBtn.addEventListener("click", (event) => {
         case document.getElementById("scooterOption"):
             endpoint = "scooter/token"
             loginNameProperty = "scooterId";
+            loginName = parseInt(loginName);
             break;
         case document.getElementById("adminOption"):
             endpoint = "admin/token"

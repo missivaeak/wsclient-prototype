@@ -15,16 +15,16 @@ loginBtn.addEventListener("click", (event) => {
 
     switch (selected) {
         case document.getElementById("customerOption"):
-            endpoint = "customer/token";
+            endpoint = "v1/customer/token";
             loginNameProperty = "email";
             break;
         case document.getElementById("scooterOption"):
-            endpoint = "scooter/token"
+            endpoint = "v1/scooter/token"
             loginNameProperty = "scooterId";
             loginName = parseInt(loginName);
             break;
         case document.getElementById("adminOption"):
-            endpoint = "admin/token"
+            endpoint = "v1/admin/token"
             loginNameProperty = "username";
             break;
     }
